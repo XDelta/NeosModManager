@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NeosModManager": {
+      "commandName": "Project",
+      "commandLineArgs": "-console -verbose"
+    }
+  }
+}
