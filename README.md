@@ -7,7 +7,7 @@ Manage and install mods from the community-managed listing of mods. More informa
 
 ## Install
 Download the [Latest Release](https://github.com/XDelta/NeosModManager/releases/latest/).<br>
-Ensure prerequites are installed. You may receive a prompt to install them when launching otherwise.<br>
+Ensure prerequisites are installed. You may receive a prompt to install them when launching otherwise.<br>
 Run `NeosModManager.exe`<br>
 Open the Settings page and set the Neos path to where you have your `Neos.exe` using the path picker<br>
 
