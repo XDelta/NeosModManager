@@ -6,14 +6,15 @@ Manage and install mods from the community-managed listing of mods. More informa
 * [.Net Desktop Runtime 6.0+](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime)
 
 ## Install
-Download the [Latest Release](https://github.com/XDelta/NeosModManager/releases/latest/).<br>
-Ensure prerequisites are installed. You may receive a prompt to install them when launching otherwise.<br>
-Run `NeosModManager.exe`<br>
-Open the Settings page and set the Neos path to where you have your `Neos.exe` using the path picker<br>
+1. Download the [Latest Release](https://github.com/XDelta/NeosModManager/releases/latest/).<br>
+1. Ensure prerequisites are installed. You may receive a prompt to install them when launching otherwise.<br>
+1. Run `NeosModManager.exe`<br>
+1. Open the Settings page and set the Neos path to where you have your `Neos.exe` using the path picker<br>
 
 ## Features:
-* Automatically download and install most mods from [Mod Manifest](https://github.com/neos-modding-group/neos-mod-manifest)
-* Quick access to NeosVR, Logs, nml_mods and Application folders
+* Download and install most mods from [Mod Manifest](https://github.com/neos-modding-group/neos-mod-manifest)
+* Show mods with updates available
+* Quick access to NeosVR, Logs, nml_mods and NMM Application folders
 * Options to use Neos.exe or NeosLauncher.exe
 * Persistent launch arguments
 * Manually check mod github pages for mod updates that aren't on the manifest yet
