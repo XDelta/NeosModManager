@@ -6,6 +6,7 @@ class ConfigData {
 	public string NeosCacheDirectory { get; set; }
 	public string LaunchArguments { get; set; }
 	public bool IgnoreNeosInstallMissing { get; set; }
+    public string GithubToken { get; set; }
 }
 public class Config {
 	//Config file
@@ -23,6 +24,8 @@ public class Config {
 	public static string LaunchArguments { get; set; } = @"";
 	/**<summary>Ignore message prompting to set Neos Install Path</summary>*/
 	public static bool IgnoreNeosInstallMissing { get; set; } = false;
+    /**<summary>Optional Github token, Increases rate limit from 60 to 5000 per hour</summary>*/
+    public static string GithubToken { get; set; } = "";
 
 
 	//Derived directories
@@ -66,8 +69,9 @@ public class Config {
 				LaunchArguments = "",
 				NeosDataDirectory = "",
 				NeosCacheDirectory = "",
-				IgnoreNeosInstallMissing = false
-			};
+				IgnoreNeosInstallMissing = false,
+                GithubToken = ""
+            };
 			string json = JsonSerializer.Serialize(_data, JsonSerializerOptions);
 			File.WriteAllText(ConfigFile, json);
 		} catch (Exception ex) {
@@ -84,8 +88,9 @@ public class Config {
 				UseNeosLauncher = UseNeosLauncher,
 				NeosDataDirectory = NeosDataDirectory,
 				NeosCacheDirectory = NeosCacheDirectory,
-				IgnoreNeosInstallMissing = IgnoreNeosInstallMissing
-			};
+				IgnoreNeosInstallMissing = IgnoreNeosInstallMissing,
+                GithubToken = GithubToken
+            };
 			string json = JsonSerializer.Serialize(_data, JsonSerializerOptions);
 			File.WriteAllText(ConfigFile, json);
 			ReadConfig(); //ensures derived values are updated
@@ -122,6 +127,8 @@ public class Config {
 		NeosCacheDirectory = Directory.Exists(openedConfig.NeosCacheDirectory) ? openedConfig.NeosCacheDirectory : "";
 		//TODO check what happens for missing or invalid keys
 		IgnoreNeosInstallMissing = openedConfig.IgnoreNeosInstallMissing;
+
+		GithubToken = openedConfig.GithubToken;
 
 		//Creates nml_mods and nml_libs if they don't exist
 		if (!Directory.Exists(NeosInstallDirectory)) {
