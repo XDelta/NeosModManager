@@ -5,6 +5,7 @@ public class ManifestInfo {
 
 	[JsonPropertyName("schemaVersion")]
 	public string schemaVersion { get; set; }
+
 	[JsonPropertyName("mods")]
 	public Dictionary<string, ModInfo> mods { get; set; }
 
@@ -61,9 +62,9 @@ public class ModInfo {
 	public string installedHash { get; set; }
 
 	public FileInfo installedFile { get; set; } // FileInfo on dll that has a hash on the manifest
-    //public string installedFilePath { get; set; };
+	//public string installedFilePath { get; set; };
 
-    public bool modHasUpdate { get; set; }
+	public bool modHasUpdate { get; set; }
 
 	public bool modEnabled { get; set; }
 }
@@ -91,11 +92,11 @@ public class ModVersion {
 	[JsonPropertyName("modloaderVersionCompatibility")]
 	public string modloaderVersionCompatibility { get; set; }
 
-	[JsonPropertyName("flagList")]
-	public string[] flagList { get; set; }
+	[JsonPropertyName("flags")]
+	public string[] flags { get; set; }
 
 	[JsonPropertyName("conflicts")]
-	public string[] conflicts { get; set; }
+	public Dictionary<string, Dependency> conflicts { get; set; }
 
 	[JsonPropertyName("dependencies")]
 	public Dictionary<string, Dependency> dependencies { get; set; }
@@ -118,7 +119,7 @@ public class Artifact {
 	//should be fine to keep or add new formats as needed, should fill any that exist
 	[JsonPropertyName("blake3")]
 	public string blake3 { get; set; }
-    
+	
 	[JsonPropertyName("installLocation")]
 	public string installLocation { get; set; }
 }
